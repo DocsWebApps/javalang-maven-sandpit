@@ -1,0 +1,20 @@
+Maven
+-----
+"C:\MyOracle\IntelliJ IDEA 2018.3"\plugins\maven\lib\maven3\bin\mvn -v : Intellij Plugin
+mvn -v : MyOracle Installation
+Maven Framework: Lifecycle -> Phase -> Plugin:Goal
+    https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
+    Lifecycles are: clean, default and site
+   The clean lifecycle has the pre-clean, clean, post-clean phases
+   Some default lifecycle phases are: initialize, validate, compile, test, package, deploy + others
+   mvn clean phase is mapped to a plugin:goal -> maven-clean-plugin:2.5:clean by default
+   So mvn clean calls the the clean goal in the plugin maven-clean-plugin version 2.5
+mvn dependency:help : Plugin help, works with other plugins !!
+mvn dependency:tree : Show all dependencies in a tree
+mvn dependency:go-offline : Download all dependencies so you can then work offline
+Maven dependencies have different scopes defined in the POM file ie. compile (default), runtime, test etc
+    If you define your own dependencies make sure you get the scope right
+    (ie. you don't need JUnit for running the application so use <scope>test</scope> in POM)
+mvn -N io.takari:maven:wrapper -Dmaven=3.6.0 : Add the maven wrapper (version) to your project
+
+
