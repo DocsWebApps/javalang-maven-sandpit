@@ -1,4 +1,4 @@
-package java8;
+package OOReview;
 
 // Demonstrates the use of Abstract Classes
 
@@ -11,7 +11,7 @@ public class Television extends AbstractElectronicDevice{
 
 	@Override
 	public String getField() {
-		return "Hello";
+		return "Hello, I'm a concrete implementation of an abstract method defined in an abstract class";
 	}
 	
 	public static void main(String[] args) {
@@ -19,6 +19,10 @@ public class Television extends AbstractElectronicDevice{
 		AbstractElectronicDevice tv=new Television("Television");
 		System.out.println(tv.getField());
 		System.out.println(tv.getDeviceName());
+
+		AbstractElectronicDevice radio=new Television("Radio");
+		System.out.println(radio.getField());
+		System.out.println(radio.getDeviceName());
 	}
 	
 }
@@ -43,5 +47,4 @@ abstract class AbstractElectronicDevice {
 	public String toString() {
 		return this.deviceName;
 	}
-
 }

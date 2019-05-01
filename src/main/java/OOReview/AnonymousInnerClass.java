@@ -1,4 +1,4 @@
-package java8;
+package OOReview;
 
 public class AnonymousInnerClass {
 	  public static void main(String[] args) {

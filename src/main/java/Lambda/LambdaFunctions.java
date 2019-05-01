@@ -1,4 +1,4 @@
-package java8;
+package Lambda;
 
 // Demonstrates the use of Lambda functions
 

@@ -1,4 +1,4 @@
-package java8;
+package FunctionalInterfaces;
 
 // Demonstrates the use of Functional Interfaces
 

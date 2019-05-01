@@ -1,4 +1,4 @@
-package java8;
+package Arrarys;
 
 // Demostrates the use of lists
 

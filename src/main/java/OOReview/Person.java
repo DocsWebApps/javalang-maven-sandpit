@@ -1,5 +1,5 @@
-package java8;
-
+package OOReview;
+// Example of Encapsulation using Private methods and getters and setters.
 public class Person {
         private String firstName;
         private String lastName;
@@ -39,5 +39,4 @@ public class Person {
         public String toString() {
             return "Person: " + getFirstName()+" "+getLastName()+", aged "+getAge();
         }
-
 }

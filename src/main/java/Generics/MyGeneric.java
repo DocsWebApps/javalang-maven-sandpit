@@ -1,4 +1,4 @@
-package java8;
+package Generics;
 
 public class MyGeneric <T> {
 	
