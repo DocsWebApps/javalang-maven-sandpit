@@ -1,5 +1,8 @@
 package OOReview;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeeTest {
     // Main method
     public static void main(String[] args) {
@@ -50,7 +53,12 @@ public class EmployeeTest {
 
         // Polymorphism
         System.out.println("\nExample of Polymorphism");
-        System.out.println(e1.polymorphismExample());
-        System.out.println(e3.polymorphismExample());
+        List<Employee> emps = new ArrayList<Employee>();
+        emps.add(e1);
+        emps.add(e3);
+        for(Employee e:emps) {
+            System.out.println(e.polymorphismExample());
+            System.out.println(((Employee)e).polymorphismExample()); // Cast not required - just an example of casting!
+        }
     }
 }

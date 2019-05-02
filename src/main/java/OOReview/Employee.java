@@ -1,8 +1,9 @@
 package OOReview;
-// Demonstrates the use of encapsulation, polymorphism and Inheritance and also the use of static modifiers, final methods, final variables and static variables
+// Demonstrates the use of encapsulation, polymorphism and Inheritance and also the use of static modifiers,
+// final methods, final variables and static variables
 // Final classes may not be extended
 // Final methods can not be overridden
-// Final variables can not be changed once set
+// Final variables can not be changed once set. Value must be set when defined or in a constructor on initialisation
 // Static modifier - executes when the class loads
 // Static method - can be called from the Class without and instance
 // Static variable - gets assigned when the class loads
@@ -34,7 +35,9 @@ public class Employee {
     private double salary;
 
     // Final variable - once set cannot be changed
-    private final int id;
+    private final int id; // Initialised in the constructor
+    private final int id2=3;
+    //private final int id2; - Gives a compile error as not initialised at definition or in the constructor
 
     // Static variable - gets assigned when the class loads
     private static  String WHOAMI="Employee Class";

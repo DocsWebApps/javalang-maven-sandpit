@@ -1,5 +1,6 @@
 package OOReview;
 
+// Example of anonymous inner, inner and static inner classes - TBC!!
 public class AnonymousInnerClass {
 	  public static void main(String[] args) {
 	    new Thread(new Runnable() {
