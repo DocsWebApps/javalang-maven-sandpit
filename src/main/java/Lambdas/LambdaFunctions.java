@@ -1,4 +1,4 @@
-package Lambda;
+package Lambdas;
 
 // Demonstrates the use of Lambda functions
 
