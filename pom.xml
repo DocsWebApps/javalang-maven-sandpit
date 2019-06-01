@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.docswebapps</groupId>
-    <artifactId>javalang-maven</artifactId>
+    <artifactId>javalang-maven-sandpit</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>JavaLang-Maven</name>
+    <name>JavaLang-Maven-Sandpit</name>
     <description>My Java/Maven/TTD Sandpit</description>
 
     <organization>
