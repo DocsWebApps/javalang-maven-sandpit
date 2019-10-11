@@ -8,7 +8,7 @@ public class EmployeeTest {
     public static void main(String[] args) {
 
         // Static fields / methods
-        System.out.println("\nExample of s static field and a static method");
+        System.out.println("\nExample of a static field and a static method");
         System.out.println(Employee.whoAmI());
         System.out.println(Manager.whoAmI());
 

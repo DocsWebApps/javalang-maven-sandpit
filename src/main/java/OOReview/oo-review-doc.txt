@@ -1,0 +1,19 @@
+ENCAPSULATION: private properties and hide implementation - present methods to change state or use the class only
+POLYMORPHYSIM: virtual method invocation
+INHERITANCE / SUBCLASSING:
+
+Package defines a namespace for the class
+Objects send messages to each other to change state - create getters and setters to change an objects properties
+Java is a hybrid OO language with primitives
+Getters ans Setters allow extra logic to be added to the method
+Code that uses other classes should not know anything about the implementation,
+   just use the object's public methods (its interface)
+If you have a defined a class used by others then don't change the existing interface - EXTEND the class with new methods
+Employee us a Domain class - its used to managed Employee's and their data
+Final classes may not be extended
+Final methods can not be overridden
+Final variables can not be changed once set. Value must be set when defined or in a constructor on initialisation
+Static modifier - executes when the class loads
+Static method - can be called from the Class without an instance
+Static variable - gets assigned when the class loads
+Manager class inherits from Employee - Java has single class inheritance

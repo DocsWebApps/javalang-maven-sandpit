@@ -1,4 +1,4 @@
-package OOReview;
+package NestedClasses;
 
 // Example of anonymous inner, inner and static inner classes - TBC!!
 public class AnonymousInnerClass {
