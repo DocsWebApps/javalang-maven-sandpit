@@ -1,0 +1,10 @@
+1. A lambda is essentially an anonymous function (method). You couldn't get a reference to a function and pass it around like a object
+2. Although nothing more than anonymous methods, they are called functions as they aren't connected to a class. Methods are attached to a class
+3. Lambda structure: (parameters) -> {block of code}
+4, Example:
+    (p1,p2,p3) -> { line1;
+                    line2;
+                    line3;
+                  }
+
+

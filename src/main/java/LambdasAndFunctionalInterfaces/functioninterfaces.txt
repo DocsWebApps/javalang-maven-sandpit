@@ -1,0 +1,6 @@
+1. Methods are defined as code that are restricted to methods
+2. Functions are defined as code that is considered first class in that it can be defined and then passed around and used in multiple classes
+   like a parameter ie. parameterize behaviour
+3. Prior to Java 8 this was done by wrapping the function around wrapped in an object, often as an anonymous inner class
+4. A functional interface is defined as an interface with one single method
+

@@ -45,6 +45,11 @@ Static classes are the easiest kind to understand because they have nothing to d
 A static class is a class declared as a static member of another class.
 Just like other static members, such a class is really just a hanger on that uses the containing class as its namespace,
 e.g. the class Goat declared as a static member of class Rhino in the package pizza is known by the name pizza.Rhino.Goat.
+You cannot use the static keyword with a class unless it is an inner class.
+A static inner class is a nested class which is a static member of the outer class.
+It can be accessed without instantiating the outer class, using other static members.
+Just like static members, a static nested class does not have access to the instance variables and methods of the outer class.
+Its a good way of implementing the builder pattern.
 
 package pizza;
 public class Rhino {

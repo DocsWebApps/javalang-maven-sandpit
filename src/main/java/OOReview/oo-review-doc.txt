@@ -16,4 +16,5 @@ Final variables can not be changed once set. Value must be set when defined or i
 Static modifier - executes when the class loads
 Static method - can be called from the Class without an instance
 Static variable - gets assigned when the class loads
+Static class - a nested class which is a static member of the outer class. It can be accessed without instantiating the outer class, using other static members.
 Manager class inherits from Employee - Java has single class inheritance

@@ -1,0 +1,11 @@
+1. Abstract class defines a class that can have abstract methods that can then be implemented in many different ways in many different sub classes
+2. In Java, we have single inheritance ie. a class can only inherit from one class
+3. Interfaces enable a class to inherit multiple behaviour from  many other interfaces
+4. The method signature in Java is the name of the method and the parameter list, not the return type or visibility
+5. Interfaces can not be instantiated, they only define behaviour
+6. Good for using polymorphism with types and using in collections ie. can be used as a generic reference type
+7. Interfaces can also contain CONSTANTS
+8. Use inheritance if you want to share state and behaviour in the sub-class ie. Class B is a kind of Class A, just more specialised
+9. Use interfaces if you want to share behaviour across classes ie. Class A and Class B both print their name
+10. Convention to use 'able' at the end of an Interface name ie. Name'able'
+11. From Java 8 interfaces support default methods that can be overridden in class implementations
