@@ -2,7 +2,9 @@ package Basics;
 
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // can use var for local variables as the type is inferred from the new statement in Java 10+
+        var message = new String("Hello World!!");
+        System.out.println(message);
     }
 }
 

@@ -2,6 +2,7 @@ package LambdasAndFunctionalInterfaces;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class EligiblePersonExample {
 
@@ -22,8 +23,12 @@ public class EligiblePersonExample {
         });
 
 //        NEW_WAY: User a lambda expression and a functional interface
-        EligiblePersonExample.roboCallEligible((Person p) -> p.getAge() > 18 );
-        EligiblePersonExample.roboCallEligible((Person p) -> p.getAge() > 50 );
+        EligiblePersonExample.roboCallEligible((p) -> p.getAge() > 18 );
+        EligiblePersonExample.roboCallEligible((p) -> p.getAge() > 50 );
+
+        // NEW_WAY: Using a predefined functional interface called Predicate
+        EligiblePersonExample.roboCallPredicate(p -> p.getAge() > 25);
+        EligiblePersonExample.roboCallPredicate(p -> p.getAge() > 50);
     }
 
     public static void roboCallEligible(EligiblePerson eligiblePerson) {
@@ -35,6 +40,19 @@ public class EligiblePersonExample {
 
         for(Person person:persons) {
             if(eligiblePerson.isEligible(person)) {
+                System.out.println(person.getGivenName());
+            }
+        }
+    }
+
+    public static void roboCallPredicate(Predicate<Person> pred) {
+        List<Person> var = new ArrayList<>();
+        var.add(new Person.Builder().setGivenName("Tom").setAge(10).build());
+        var.add(new Person.Builder().setGivenName("Dick").setAge(30).build());
+        var.add(new Person.Builder().setGivenName("Harry").setAge(60).build());
+
+        for(Person person : var) {
+            if (pred.test(person)) {
                 System.out.println(person.getGivenName());
             }
         }

@@ -55,6 +55,12 @@
             <version>${junit-platform.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <version>1.18.10</version>
+        </dependency>
     </dependencies>
 
     <build>
