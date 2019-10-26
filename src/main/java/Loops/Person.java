@@ -11,10 +11,16 @@ public class Person {
         return this.name;
     }
 
-    static class Builder {
+    static PersonBuilder build() {
+        return new PersonBuilder();
+    }
+
+    static class PersonBuilder {
         private String name;
 
-        Builder setName(String name) {
+        PersonBuilder() {}
+
+        PersonBuilder name(String name) {
             this.name = name;
             return this;
         }

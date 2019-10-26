@@ -6,10 +6,10 @@ import java.util.List;
 public class ForLoops {
     public static void main(String... args) {
         List<Person> persons = new ArrayList<>();
-        persons.add(new Person.Builder().setName("Dave").build());
-        persons.add(new Person.Builder().setName("Sarah").build());
-        persons.add(new Person.Builder().setName("Fraz").build());
-        persons.add(new Person.Builder().setName("Jess").build());
+        persons.add(Person.build().name("Dave").build());
+        persons.add(Person.build().name("Sarah").build());
+        persons.add(Person.build().name("Fraz").build());
+        persons.add(Person.build().name("Jess").build());
 
         for(int i=0; i < persons.size(); i++) {
             System.out.println("1: "+persons.get(i).getName());
