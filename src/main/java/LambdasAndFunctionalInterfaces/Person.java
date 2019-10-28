@@ -92,6 +92,10 @@ public class Person {
         this.code = code;
     }
 
+    static Builder builder() {
+        return new Builder();
+    }
+
     static class Builder {
         private String givenName;
         private String surName;

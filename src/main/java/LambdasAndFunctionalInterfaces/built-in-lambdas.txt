@@ -1,0 +1,8 @@
+1. Functional interface package is a set of general purpose functional interfaces in the JDK.
+2. They provide templates so the compiler knows what your lambda method signature and return type should conform to.
+3. Predicate, Consumer, Supplier and Function are examples -  see JavaQuiz::BeerProcessorChallenger
+4. Predicate - takes a type T and returns a boolean
+5. Consumer - an expression that performs operations on an object as an argument and has no return type
+6. Supplier - provides an instance of a type (such as a factory)
+7. Function - transforms type T into type U
+

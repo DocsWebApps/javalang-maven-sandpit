@@ -29,14 +29,18 @@ public class EligiblePersonExample {
         // NEW_WAY: Using a predefined functional interface called Predicate
         EligiblePersonExample.roboCallPredicate(p -> p.getAge() > 25);
         EligiblePersonExample.roboCallPredicate(p -> p.getAge() > 50);
+
+        // Example of using the built in Predicate<T> that takes T and returns a boolean
+        Predicate<Person> over55 = p -> p.getAge() > 55;
+        EligiblePersonExample.roboCallPredicate(over55);
     }
 
     public static void roboCallEligible(EligiblePerson eligiblePerson) {
         List<Person> persons = new ArrayList<>();
-        persons.add(new Person.Builder().setGivenName("Jess").setAge(11).build());
-        persons.add(new Person.Builder().setGivenName("Dave").setAge(52).build());
-        persons.add(new Person.Builder().setGivenName("Sarah").setAge(49).build());
-        persons.add(new Person.Builder().setGivenName("Fraz").setAge(21).build());
+        persons.add(Person.builder().setGivenName("Jess").setAge(11).build());
+        persons.add(Person.builder().setGivenName("Dave").setAge(52).build());
+        persons.add(Person.builder().setGivenName("Sarah").setAge(49).build());
+        persons.add(Person.builder().setGivenName("Fraz").setAge(21).build());
 
         for(Person person:persons) {
             if(eligiblePerson.isEligible(person)) {
@@ -47,9 +51,9 @@ public class EligiblePersonExample {
 
     public static void roboCallPredicate(Predicate<Person> pred) {
         List<Person> var = new ArrayList<>();
-        var.add(new Person.Builder().setGivenName("Tom").setAge(10).build());
-        var.add(new Person.Builder().setGivenName("Dick").setAge(30).build());
-        var.add(new Person.Builder().setGivenName("Harry").setAge(60).build());
+        var.add(Person.builder().setGivenName("Tom").setAge(10).build());
+        var.add(Person.builder().setGivenName("Dick").setAge(30).build());
+        var.add(Person.builder().setGivenName("Harry").setAge(60).build());
 
         for(Person person : var) {
             if (pred.test(person)) {

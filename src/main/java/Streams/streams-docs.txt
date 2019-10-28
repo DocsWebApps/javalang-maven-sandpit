@@ -1,0 +1,16 @@
+1. stream().filter(lambda).forEach(lambda) - fluent programming style
+2. stream allows you to view the collection and apply operations to each object in the stream - like a Linux pipe
+3. In this case, forEach is a terminal operation, filter is a intermediate operation
+5. Intermediate operations return a stream object that can have other intermediate or a terminal operation applied to it
+6. Stream calls turn a collection into a pipeline
+7. A stream pipeline consists of a source, 0 or more intermediate operations and one terminal operation
+8. Map is an intermediate or aggregate operation
+9. Example: stream().filter(lambda).map(lambda).forEach(lambda)
+10. Example of filter() -> map() -> reduce
+11. Its the terminal operation that starts execution process. Intermediate operations are called lazy for this reason,
+they are not invoked until the terminal operation starts.
+12. Each aggregate step creates a new stream() with only those objects that meet the criteria of the aggregate step.
+13. Terminal operations don't return a stream, aggregates do.
+14. Most collections have a stream() method :-). Stream method turns a collection into a pipeline.
+15. Streams are immutable and once an element has been consumed its no longer available on the stream. Filters create new streams.
+16. Streams can be sequential or parallel.

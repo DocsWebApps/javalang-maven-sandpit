@@ -17,6 +17,7 @@ public class BeerProcessorChallenger {
         System.out.println(moeBeerSupplier.get());
         System.out.println(drunkeness);
         System.out.println(processBeer.apply(drunkeness));
+        System.out.println(drunkeness);
 
         homeBeerConsumer.accept(moeBeerSupplier.get() + processBeer.apply(drunkeness));
     }
