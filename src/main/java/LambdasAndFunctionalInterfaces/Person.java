@@ -4,6 +4,7 @@ public class Person {
     private String givenName;
     private String surName;
     private int age;
+    private Integer yob;
     private Gender gender;
     private String eMail;
     private String phone;
@@ -11,6 +12,18 @@ public class Person {
     private String city;
     private String state;
     private String code;
+
+    String convertAge() {
+        return this.getYob().toString();
+    }
+
+    public Integer getYob() {
+        return yob;
+    }
+
+    public void setYob(Integer yob) {
+        this.yob = yob;
+    }
 
     public String getGivenName() {
         return givenName;
