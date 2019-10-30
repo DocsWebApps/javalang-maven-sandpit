@@ -1,0 +1,17 @@
+1. Declarative programming tells the compiler what we wnt to do (like SQL), Imperitive programming tells the compiler what to do and also how to do it (like a
+boiler plate for loop with an in for an index to iterate over a collection).
+2. Aggregate operations are lazy in that they arn't applied until the terminal operator is executed.
+3. Intermediate: filter(), map(), peek(), dropWhile()
+4. Intermediate short-circuit: limit(), takeWhile(), flatMap()
+5. Terminal: forEach(), count(), sum(), average(), min(), max(), collect()
+6. Terminal short-circuit: findFirst(), findAny(), anyMatch(), allMatch(), noneMatch(), takeWhile()
+7. Short circuit operations stop processing when the condition is met ie. findFirst
+8. If you calling a method in a lambda, and your not passing in a parameter you can use the direct form of calling the method
+   ie. b->b.getName() == Book::getName
+9. Use peek() to peek inside a running stream but beware that you can change the underlying items in a collection if you call a method on that object
+   that changes its state using peek().
+10. If you catch your using forEach or for(T t : ts), you should be using a stream and a lambda !!
+11. All methods are described in the java.util.stream documentation on the web
+12. User Stream.of() to create a stream if you want to use its features
+13. A good tip is: create your stream and use s simple forEach(System.out::println) to view thw data output - then add your filters and maps gradually !!
+
