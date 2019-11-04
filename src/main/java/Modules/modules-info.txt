@@ -1,0 +1,36 @@
+1. Modules are a way of organising packages, its a reusable set of one or more packages
+that makes sense being grouped together. It was introduced in Java 9.
+You don't have to migrate all of your old code. However, try to use modules from now on.
+going forward. Can also include other resources such as XML or image files.
+2. Packages are good for organising classes, but as the number of packages increases how do you allow and control
+access to your API's that are in classes that are all spread out in different packages.
+Use public and let all use it is sometimes the only option !!
+3. A module is a way of organising packages and controlling who can access them and also for promoting re-use
+4. An application composed of modules will be more reliable than one composes of a mess of packages
+5. Modules should support:
+    1. Strong encapsulation - define who can see what, blacklisted by default
+    2. Well defined interfaces - as people will depend on these need to make them solid
+    3. Explicit dependencies - develop a module graph to show all dependencies
+6. No cyclic dependencies: A -> and B -> A is not allowed
+7. No split packages: can't have the same package name in 2 different modules
+8. Concealed packages are not exposed to use from outside of the module, but can be used by packages inside the module.
+9. Exported modules can be used from outside by other applications.
+10. Modules are described by the module-info.class file which is stored in the modules root folder.
+11. Packages inside modules are blacklisted by default, even public classes/methods in packages are blacklisted
+you have explicitly export them to make them available to application out side the module.
+12. Special permissions can be set up to allow reflection but not access.
+13. Use of Requires:
+    1. requires - specifies a normal module dependency.
+    2. requires transitive - specifies a module dependency, but also makes that depended on modules available to
+    other modules.
+    3. requires static - only requires the module at compile time, not at runtime.
+14. Use of exports:
+    1. module a {exports x } - free access to package x in module a fo all
+    2. module a {exports x to b} - only module b can access package x
+15. Use of opens:
+    1. open module c {exports x} - all can access everything in module c for reflection (runtime) but on package x for compilation.
+    2. module c {exports x; opens y; opens z to b;} - work it out :-) opens = runtime, exports = compile time
+
+16. Cusomt Runtime Image: a special distibution of Java that only contains spelected modules
+
+
