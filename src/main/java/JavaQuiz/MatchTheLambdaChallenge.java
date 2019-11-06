@@ -5,70 +5,71 @@ import java.util.function.*;
 // Advanced !!
 public class MatchTheLambdaChallenge {
     public static void main(String[] args) {
-        Supplier<String> moeBeerSupplier = () -> "BeerFromMoe";
-        Supplier<String> methodReferenceMoeBeerSupplier = String::new;
-
-        Predicate<String> beerQualityTest = (beerQuality)->beerQuality.equals("good");
-        Predicate<String> methodReferenceBeerQualityTest = "good"::equals;
-
-        Consumer<String> beerConsumer = (beerBrand) -> System.out.println(beerBrand);
-        Consumer<String> methodReferenceConsumer = System.out::println;
-
-        Function<String,String> beerProcessor = (beer)->"Yuk: " + beer;
-        Function<String,String> methodReferenceBeerProcessor = "Yuk: "::concat;
-
-        BiFunction<String,String,Object> biBeerProcessor = (beer1,beer2)-> beer1 + beer2;
-        BiFunction<String,String,Object> methodReferenceBuBeerProcessor= String::compareTo;
-
-        UnaryOperator<String> pureUniBeerProcessor = pureBeer-> pureBeer.concat("super");
-        UnaryOperator<String> methodReferenceUniPureBeerProcessor = String::valueOf;
-
-        BinaryOperator<String> pureBiBeerProcessor = (beer1,beer2)-> beer1 + beer2;
-        BinaryOperator<String> methodReferenceBiPureBeerProcessor = String::concat;
-
+        Supplier<String> moeBeerSupplier = () -> "BeerFromMoe"; // Line 6
+        Supplier<String> methodReferenceMoeBeerSupplier = String::new; // Line 7
+        System.out.println("Supplier example.......");
         System.out.println(moeBeerSupplier.get());
-        String dave = methodReferenceMoeBeerSupplier.get();
+        System.out.println(methodReferenceMoeBeerSupplier.get().concat("BeerFromMoe"));
 
-        System.out.println(methodReferenceMoeBeerSupplier);
-        System.out.println(methodReferenceBeerQualityTest.test("good"));
+        System.out.println("\nPredicate example.......");
+        Predicate<String> beerQualityTest = (beerQuality) -> beerQuality.equals("good"); // Line 9
+        Predicate<String> methodReferenceBeerQualityTest = "good"::equals; // Line 10
+        System.out.println(beerQualityTest.test("good") ? "Beer is good":"Beer is bad");
+        System.out.println(methodReferenceBeerQualityTest.test("yuk!")?"Beer is good":"Beer is bad");
 
-        beerConsumer.accept("bass");
-        methodReferenceConsumer.accept("Lager");
+        System.out.println("\nConsumer example.......");
+        Consumer<String> beerConsumer = (beerBrand) -> System.out.println(beerBrand); // Line 12
+        Consumer<Integer> methodReferenceConsumer = System.out::println; // Line 13
+        beerConsumer.accept("Bass");
+        methodReferenceConsumer.accept(3);
 
-        System.out.println(beerProcessor.apply("Bitter"));
-        System.out.println(methodReferenceBeerProcessor.apply("Guiness"));
+        System.out.println("\nFunction example.......");
+        Function<String, String> beerProcessor = (beer) -> "Yuk: " + beer; // Line 15
+        Function<String,String> methodReferenceBeerProcessor = "Yuk: "::concat; // Line 16
+        System.out.println(beerProcessor.apply("Guiness"));
+        System.out.println(methodReferenceBeerProcessor.apply("Stout"));
 
-        System.out.println(biBeerProcessor.apply("Lager","Bitter"));
-        System.out.println(methodReferenceUniPureBeerProcessor.apply("Bitter"));
+        System.out.println("\nBiFunction example.......");
+        BiFunction<String, String, Object> biBeerProcessor = (beer1, beer2) -> beer1 + beer2; // Line 18
+        BiFunction<String, String, Object> methodReferenceBiBeerProcessor = String::compareTo; // Line 19
+        System.out.println(biBeerProcessor.apply("Lager", "Bitter"));
+        System.out.println(methodReferenceBiBeerProcessor.apply("Lager","Bitter"));
 
-        System.out.println(pureBiBeerProcessor.apply("Bud", "Wiser"));
-        System.out.println(methodReferenceBiPureBeerProcessor.apply("Lager","Bitter"));
+//
+//        UnaryOperator<String> pureUniBeerProcessor = pureBeer-> pureBeer.concat("super");
+//        UnaryOperator<String> methodReferenceUniPureBeerProcessor = String::valueOf;
+//
+//        BinaryOperator<String> pureBiBeerProcessor = (beer1,beer2)-> beer1 + beer2;
+//        BinaryOperator<String> methodReferenceBiPureBeerProcessor = String::concat;
+
+//        System.out.println(moeBeerSupplier.get());
+//        String dave = methodReferenceMoeBeerSupplier.get();
+//
+//        System.out.println(methodReferenceMoeBeerSupplier);
+//        System.out.println(methodReferenceBeerQualityTest.test("good"));
+//
+//        beerConsumer.accept("bass");
+//        methodReferenceConsumer.accept("Lager");
+//
+//        System.out.println(beerProcessor.apply("Bitter"));
+//        System.out.println(methodReferenceBeerProcessor.apply("Guiness"));
+//
+//        System.out.println(biBeerProcessor.apply("Lager","Bitter"));
+//        System.out.println(methodReferenceUniPureBeerProcessor.apply("Bitter"));
+//
+//        System.out.println(pureBiBeerProcessor.apply("Bud", "Wiser"));
+//        System.out.println(methodReferenceBiPureBeerProcessor.apply("Lager","Bitter"));
     }
 }
+
 //
+
 //
+
 //
+
 //
-//    I create this class.
-//        import java.util.function.*;
-//
-//public class MatchTheLambdaChallenger {
-//
-//    public static void main(String... doYourBest) {
-//        Supplier<String> moeBeerSupplier = null; // Line 6
-//        Supplier<String> methodReferenceMoeBeerSupplier = null; // Line 7
-//
-//        Predicate<String> beerQualityTest = null; // Line 9
-//        Predicate<String> methodReferenceBeerQualityTest = null; // Line 10
-//
-//        Consumer<String> beerConsumer = null; // Line 12
-//        Consumer<Integer> methodReferenceConsumer = null; // Line 13
-//
-//        Function<String, String> beerProcessor = null; // Line 15
-//        Function<String,String> methodReferenceBeerProcessor = null; // Line 16
-//
-//        BiFunction<String, String, Object> biBeerProcessor = null; // Line 18
-//        BiFunction<String, String, Object> methodReferenceBiBeerProcessor = null; // Line 19
+
 //
 //        UnaryOperator<String> pureUniBeerProcessor = null; // Line 21
 //        UnaryOperator<String> methodReferenceUniPureBeerProcessor = null; // Line 22
