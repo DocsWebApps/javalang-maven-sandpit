@@ -3,6 +3,7 @@ package JavaQuiz;
 import java.util.List;
 import java.util.function.Predicate;
 
+// Advanced
 public class NeoSearch {
     public static void main(String[] args) {
         List<String> ls = List.of("Neo","Morpheus","Oracle","Trinity","Neo");

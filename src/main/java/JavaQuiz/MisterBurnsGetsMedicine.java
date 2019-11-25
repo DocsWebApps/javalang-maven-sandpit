@@ -1,5 +1,6 @@
 package JavaQuiz;
 
+// Intermediate
 public class MisterBurnsGetsMedicine {
     public static void main(String... doYourBest) {
         MedicineSupplier medicine = Smithers::new;

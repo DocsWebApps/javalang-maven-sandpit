@@ -1,6 +1,7 @@
 package JavaQuiz;
 import java.util.function.*;
 
+// Advanced
 public class JediDarkSideFight {
     public static void main(String... args) {
         String useSaber = "useSaber";
