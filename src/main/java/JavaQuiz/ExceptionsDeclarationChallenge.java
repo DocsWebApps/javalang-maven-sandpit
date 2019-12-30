@@ -1,7 +1,6 @@
 package JavaQuiz;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 public class ExceptionsDeclarationChallenge {
 
@@ -19,10 +18,10 @@ public class ExceptionsDeclarationChallenge {
         }
     }
 
-    static class Sheldon extends Scientist {
-        public void talk() throws IOException { // Line 21
-            System.out.println("My spot");
-        }
-    }
+//    static class Sheldon extends Scientist {
+//        public void talk() throws IOException { // Line 21
+//            System.out.println("My spot");
+//        }
+//    }
 
 }
