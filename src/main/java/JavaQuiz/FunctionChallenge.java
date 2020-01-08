@@ -10,6 +10,7 @@ public class FunctionChallenge {
     public static void main(String... doYourBest) {
         int firstResult;
         int secondResult;
+
         BiFunction<Integer, Integer, Integer> func;
         BiFunction<Integer, Integer, Integer> func2;
         Function<Integer,Integer> func3;

@@ -1,0 +1,69 @@
+1. Different ways to implement threading
+2. Old ways are by extending the Thread class or by implementing the Runnable interface.
+3. Both methods rely on overriding the run() method and then creating a new object and using the start() method to start the thread.
+4. start() method does some housekeeping for the thread and then executes the code in the run method
+5. For long running threads occasionally sleep from time to time to allow other threads to run
+6. JVM gets/creates a thread from the OS and runs the code below on it.
+7. Examples are HelloRunnable, HelloThread and MultipleThreads.
+
+8. New method is to use ExecutorService - runnable and callable tasks
+9. ExecutorService: Callable Task - returns a value when thread is completed and throws checked Exception
+10. ExecutorService: Runnable Task - run a task to completion, no return value
+11. Shutting down an Executor service is important as they are nodaemon threads and will stop your JVM from shutting down !!
+12. The Future interface is used to obtain the results of the Callable's V call() method at a time in the future. Enables asynchronous work.
+13. V result = future.get() method will block until the thread has completed as it needs the return value. Can be used to force a block until a thread completes.
+14. V result = future.isDone() does not block and can be used to check for completion of the thread
+15. Examples are ExampleRunnable and ExampleCallable
+
+16. Thread Safety - Classes should continue to behave correctly when accessed from multiple threads - THREADSAFE!!
+20. RACE condition:
+        A race condition occurs when two or more threads can access shared data and they try to change it at the same time.
+        Because the thread scheduling algorithm can swap between threads at any time,
+        you don't know the order in which the threads will attempt to access the shared data.
+        Therefore, the result of the change in data is dependent on the thread scheduling algorithm,
+        i.e. both threads are "racing" to access/change the data.
+
+        Problems often occur when one thread does a "check-then-act"
+        (e.g. "check" if the value is X, then "act" to do something that depends on the value being X)
+        and another thread does something to the value in between the "check" and the "act". E.g:
+
+        if (x == 5) // The "Check"
+        {
+           y = x * 2; // The "Act"
+           // If another thread changed x in between "if (x == 5)" and "y = x * 2" above,
+           // y will not be equal to 10.
+        }
+
+        The point being, y could be 10, or it could be anything, depending on whether another thread changed x in between the check and act.
+        You have no real way of knowing.
+
+        In order to prevent race conditions from occurring, you would typically put a lock around the shared data to ensure only one thread
+        can access the data at a time. This would mean something like this:
+
+        // Obtain lock for x
+        if (x == 5)
+        {
+           y = x * 2; // Now, nothing can change x until the lock is released.
+                      // Therefore y = 10
+        }
+        // release lock for x
+
+21. Thread safe data: local variables, method parameters, exception handler parameters and immutable objects
+22. Atomic operations function as a single operation or one instruction or in one cycle. They happen completely in one og or not at all.
+    Can't therefore be interleaved by other operations. java.util.concurrent.atomic -> lock free thread safe variables
+23. synchronized: code completed in its entirety by any thread
+24. synchronized method: public synchronized void increment() {} - whole method is synchronized
+25. synchronized block: synchronized(this) {} - code in {} is synchronized and exclusive to any thread
+26. synchronized uses a built in monitor lock that is present in every Java object
+27. Threading Performance Bottlenecks:
+    Resource Contention: 2 resources waiting for the same lock
+    Blocking I/O: can do nothing while thread is blocking for I/O
+    Under utilisation of CPUs: single threaded application only uses 1 CPU
+
+28. Concurrency: appears to be running at the same time but actually multitasked.
+29. Parallelism: assigning tasks to separate cores and actually do run at the same time.
+
+30. Deadlock: when 2 or more threads are blocked forever, ie. each thread holds the lock the others trying to acquire
+31. Starvation or Livelock: when a thread gets no time to execute as its shut out by other greedy threads
+
+
