@@ -1,0 +1,2 @@
+1. S - Single Responsibility Principle
+    An object should do just one thing! Avoid God classes that do everything and separate your concerns.
