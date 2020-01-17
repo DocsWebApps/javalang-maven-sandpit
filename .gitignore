@@ -1,6 +1,7 @@
 ######################
 # Project Specific
 ######################
+davesfile*.txt
 environment.cmd
 /build/www/**
 /src/test/javascript/coverage/
