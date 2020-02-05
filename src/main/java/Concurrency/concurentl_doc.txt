@@ -9,7 +9,11 @@
 8. New method is to use ExecutorService - runnable and callable tasks
 9. ExecutorService: Callable Task - returns a value when thread is completed and throws checked Exception
 10. ExecutorService: Runnable Task - run a task to completion, no return value
-11. Shutting down an Executor service is important as they are nodaemon threads and will stop your JVM from shutting down !!
+11. Shutting down an Executor service is important as they are non daemon threads and will stop your JVM from shutting down !!
+    There are two types of threads:
+    a. Non-daemon: the main method is executed with a non-daemon thread behind the scenes and this thread will be executed until the end.
+       If the end doesn't occur for some reason, it will run forever!
+    b. Daemon: it will die if all non-daemon threads have finished. Set via thread.setDaemon(true);
 12. The Future interface is used to obtain the results of the Callable's V call() method at a time in the future. Enables asynchronous work.
 13. V result = future.get() method will block until the thread has completed as it needs the return value. Can be used to force a block until a thread completes.
 14. V result = future.isDone() does not block and can be used to check for completion of the thread

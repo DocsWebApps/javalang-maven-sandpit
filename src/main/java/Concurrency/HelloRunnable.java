@@ -10,7 +10,6 @@ public class HelloRunnable implements Runnable {
     @Override
     public void run() {
         System.out.println("Hello from another Thread !");
-
         // For long running threads occasionally sleep from time to time to allow other threads to run
         try {
             Thread.sleep(1000);
