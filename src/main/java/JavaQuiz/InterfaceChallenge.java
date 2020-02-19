@@ -52,7 +52,7 @@ public class InterfaceChallenge {
 }
 
 /*
-Let's analyse this code:
+Let's analyse this code (dodgy answer below :-):
 
     System.out.println(new Jedi() {
         public String useForce() {
