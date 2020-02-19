@@ -24,7 +24,6 @@ public class InterfaceChallenge {
         private String useForce() {
             return "F";
         }
-
     }
 
     public static void main(String... starWars) {
@@ -34,9 +33,21 @@ public class InterfaceChallenge {
             // after Jedi.MASTER = "SLukeFSYoda"
             public String useForce() { return "X"; } }.attack() + Jedi.useSaber() + Jedi.MASTER);
 
-        // Doesn't seem to override userForce() in the Interface ??
+        // Doesn't seem to override userForce() in the interface ??
         Jedi dave = new Jedi() {private String useForce() { return "X"; }};
         System.out.println(dave.useForce());
+
+        InterfaceChallengeSuppliment dave1 = new InterfaceChallengeSuppliment() {
+            public String useForce() { return "X"; }
+        };
+        System.out.println(dave1.useForce());
+
+        // Does seem to override userForce() in the interface ??
+        System.out.println(new InterfaceChallengeSuppliment() {
+            // after attack() = "SLukeF"
+            // after Jedi.userSaber() = "SLukeXS"
+            // after Jedi.MASTER = "SLukeXSYoda"
+            public String useForce() { return "X"; } }.attack() + Jedi.useSaber() + Jedi.MASTER);
     }
 }
 
