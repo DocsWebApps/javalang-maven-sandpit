@@ -7,12 +7,16 @@ package Exceptions;
 
 // Try to catch the most specific exception - don't just use Exception all the time - use multiple catches for different Exceptions
 
+import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class MyExceptions1 {
     public static void main(String[] args) throws IOException {
+        String soprano = null;
+
+        CloseIt closeIt = new CloseIt();
         // If you don't catch the exception in your code, adding "throws Exception" will
         // throw the exception back to the caller.
         // try-catch-finally
@@ -58,6 +62,22 @@ public class MyExceptions1 {
             System.out.println("\nCaught IOException from called object.method()");
         }
 
+        try(closeIt) {
+            System.out.println(soprano.matches(null));
+        } catch (RuntimeException r) {
+            try (closeIt) {
+                System.out.println("runtime");
+                throw new DrDavesException();
+//                throw new StackOverflowError();
+            } catch (Exception e) {
+                System.out.println("exception");
+            }
+        } catch (Error exception) {
+            System.out.println("error");
+        } catch (Throwable throwable) {
+            System.out.println("throwable");
+        }
+
         System.out.println("\nNot caught IOException from called object.method(), output below!");
         myExceptions1.testThrowException();
     }
@@ -80,14 +100,25 @@ public class MyExceptions1 {
             System.out.println("DavesException Thrown! " + e.getMessage());
         }
     }
+
+    static class CloseIt implements Closeable {
+
+        public void close() {
+            System.out.println("close");
+        }
+    }
 }
 
 class DavesException extends Exception {
     DavesException() {}
-
     DavesException(String message) {super(message);}
-
     DavesException(String message, Throwable cause) {
         super(message, cause);
     }
+}
+
+class DrDavesException extends Exception {
+    DrDavesException() {}
+    DrDavesException(String message) {super(message);}
+    DrDavesException(String message, Throwable cause) {super(message, cause);}
 }
