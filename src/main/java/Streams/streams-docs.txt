@@ -9,8 +9,20 @@
 10. Example of filter() -> map() -> reduce
 11. Its the terminal operation that starts execution process. Intermediate operations are called lazy for this reason,
 they are not invoked until the terminal operation starts.
-12. Each aggregate step creates a new stream() with only those objects that meet the criteria of the aggregate step.
+12. Streams are immutable, each aggregate step creates a new stream() with only those objects that meet the criteria of the aggregate step.
 13. Terminal operations don't return a stream, aggregates do.
 14. Most collections have a stream() method :-). Stream method turns a collection into a pipeline.
 15. Streams are immutable and once an element has been consumed its no longer available on the stream. Filters create new streams.
-16. Streams can be sequential or parallel.
+16. Streams can be sequential or parallel, .sequential()  or .parallel()
+17. Parallel streams use the fork/join framework which is an overhead to set up, so don't use for small dataset's or small
+computations on a small dataset.
+18. Note: ArrayList<>() is not synchronised and therefore not thread safe, so only use if your not adding items to an ArrayList<>(),
+only use if consuming values on an existing ArrayLIst<>().
+19. Use parallel on deterministic operations. ie. where the result will be the same in sequence or in parallel.
+20. Use parallel where the function is associative, the order doesn't matter ie. sum(), min() or max().
+21. Reduce() means to take in a number of items and reduce to a smaller number ie. sum()
+    int r2 = IntStream.rangeClosed(1,5).parallel().reduce(0, (sum, element) -> sum + element); same as sum() 1,5 inclusive = 15
+22. Map() means to apply some function on a list of items to create a new list containing new items.
+23. Rule of thumb for parallel decision: N * Q > 10,000 : N = number of data elements, Q = computational complexity cost.
+    Larger N * Q the better!
+

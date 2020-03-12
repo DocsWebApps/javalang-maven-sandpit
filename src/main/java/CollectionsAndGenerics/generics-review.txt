@@ -1,0 +1,41 @@
+Collections
+-----------
+1. List is an interface type and a collection
+2. Using interfaces as the reference type you can use different implementations for that reference type
+3. ArrayList<>() is a concrete implementation of List which is an interface - a reference type - not synchronised
+4. Interfaces: Iterator -> Collection -> List, Set, SortedSet, Queue
+5. List:
+    - elements are ordered to how they are added
+    - searchable by index
+    - duplicates allowed
+    - implementations: ArrayList, LinkedList
+6. Set:
+    - elements can not be searched by index
+    - no duplicates
+    - implementations: HashSet, LinkedHashSet
+7. SortedSet implementations: TreeSet
+8. Queue implementation: DeQue
+
+Maps (Key / Value)
+------------------
+1. Interfaces: Map -> SortedMap
+2. Map:
+    - elements are key value pairs
+    - duplicate keys not allowed
+    - implementation: HasMap
+3. SortedMap implementation: TreeMap
+
+Generics
+--------
+1. Generic uses the <> notation to indicate the type of a collection say
+2. MyClass<AnyType> myObject = new MyClass<>(); - just use <> from Java 7 onwards.
+   Infers type from reference definition. In JAva 9 also applies to inner classes
+
+AutoBoxing
+----------
+1. Java has objects (or reference types) and primitives
+2. Each primitive has an object wrapper class ie. int and Integer
+3. Since Java 1.5 autoboxing/unboxing was introduced
+    Integer myInt = 10; works as 10 is autoboxed for you.
+
+
