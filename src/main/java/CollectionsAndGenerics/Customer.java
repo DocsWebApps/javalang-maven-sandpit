@@ -1,4 +1,4 @@
-package Generics;
+package CollectionsAndGenerics;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -157,9 +157,9 @@ public class Customer {
 
         private static void loadCustomers() {
             customers.add(Customer.builder().id(1L).firstName("Dave").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
-            customers.add(Customer.builder().id(1L).firstName("Sarah").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
-            customers.add(Customer.builder().id(1L).firstName("Frazer").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
-            customers.add(Customer.builder().id(1L).firstName("Jessica").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
+            customers.add(Customer.builder().id(2L).firstName("Sarah").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
+            customers.add(Customer.builder().id(3L).firstName("Frazer").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
+            customers.add(Customer.builder().id(4L).firstName("Jessica").lastName("Collier").address("19 Hurst Road").mobileNo("1234"));
         }
     }
 }

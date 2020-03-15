@@ -1,7 +1,6 @@
 package Arrarys;
 
-// Demostrates the use of lists
-
+// Demonstrates the use of lists
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -40,7 +39,7 @@ public class MyArrayList {
 		boolean result=false;
 		for(String s:myString) {
 			if(s.equals(str)) {
-				System.out.println("I have found "+str+" using a ForEach loop");
+				System.out.println("I have found "+str+" using a For(each) loop");
 			}
 		}
 	}
@@ -59,7 +58,27 @@ public class MyArrayList {
 	}
 	
 	public static void main(String[] args) {
+		//Simple arrays
+		System.out.println("Simple arrays...");
+		int[] numbers = new int[10]; //primitive array
+		numbers[0] = 1;
+		numbers[1] = 2;
+		numbers[2] = 3;
+
+		String[] names = new String[2];
+		names[0] = "dave";
+		names[1] = "sarah";
+
+		for(int i=0; i < names.length; i++) {
+			System.out.println(names[i]);
+		}
+
+		for(String name : names) {
+			System.out.println(name);
+		}
+
 		// ArrayList
+		System.out.println("\nArrayLists...");
 		MyArrayList myArray=new MyArrayList();
 		String myStr1="Bob";
 		String myStr2="Bob";

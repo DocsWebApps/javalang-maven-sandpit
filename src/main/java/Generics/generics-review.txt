@@ -1,3 +1,0 @@
-1. List is an interface type and a collection
-2. Using interfaces as the reference type you can create different implementations of that reference type
-3. ArrayList<>() is a concrete implementation of List

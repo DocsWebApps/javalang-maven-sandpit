@@ -8,7 +8,7 @@ public class ConstructorChallenge1 {
     static abstract class Character {
         String name;
         int age = 35;
-        static { System.out.println("D'oh"); }
+        static { System.out.println("D'oh"); } //executes when the class loads
         Character(String name, int age) {
             this.name = "Homer";
             this.age = this.age;

@@ -1,0 +1,73 @@
+Collections
+-----------
+1. List is an interface type and a collection
+2. Using interfaces as the reference type you can use different implementations for that reference type
+3. ArrayList<>() is a concrete implementation of List which is an interface - a reference type - not synchronised
+4. Interfaces: Iterator -> Collection -> List, Set, SortedSet, Queue
+5. List:
+    - elements are ordered to how they are added
+    - searchable by index
+    - duplicates allowed
+    - good for iterating
+    - implementations: ArrayList, LinkedList
+6. Set:
+    - elements can not be searched by index
+    - no duplicates
+    - can iterate
+    - implementations: HashSet, LinkedHashSet
+7. SortedSet implementations: TreeSet
+8. Queue implementation: DeQue - double ended queue
+
+Maps (Key / Value)
+------------------
+1. Interfaces: Map -> SortedMap
+2. Map Interface:
+    - elements are key value pairs
+    - duplicate keys not allowed, original value is overwritten if you re-use a key
+    - gets values quickly but not good for iterating
+    - implementations: HashMap, HashTable (deprecated), LinkedHashMap
+      EnumHashMap, IdentityHashMap, WeakHasMap, SoftHashMap, TreeMap
+3. HashTable:
+   - threadsafe
+   - deprecated
+   - no null key values
+4. HashMap (not threadsafe) / ConcurrentHashMap (threadsafe):
+   - can take ONE null at index 0
+   - if 2 objects are equal, they should have the same hashcode() value returned.
+     So if you override the hashcode() method you need to override the equals() method and vice-versa
+     so that they still work together. This is because the node is checked on both the hashcode and equals result
+   - HashMaps are made up of an array of indexes (usually 16, 0 - 15), At each index is a 'bucket' containing nodes
+     connected as a linked list. A node = (Key, Hash, Value, NextNodePointer)
+   - HashMap put() works by finding the hashcode of the key. It then finds the index depending on the size of the
+     index array by dividing the hashcode by the max range of the array (array size - 1).
+     It then places that node at that index (in the bucket).
+     If a node already exists at that index (or already in the bucket), the NextNodePointer of the last node
+     in the bucket is updated to point to the new added node, which then becomes the last node in the bucket.
+   - HashMap.get() works by calculating the hashcode, the index is then calculated, and each node at that
+     index has both its hashcode and the equals method on the key checked to see if they both match.
+     If successful, the value is returned.
+   - Java8+, if the number of nodes at an index (or in the bucket) exceeds a threshold (usually 8),
+     that particular bucket only switches from a linked list to a balanced tree for better performance.
+   - ConcurrentHashMap, reads are concurrent and fast, only writes block and only at a segment level,
+     not the whole table.
+5. TreeMap:
+   - is a sorted Map whereby the keys are sorted on insertion. Need to implement Comparable interface compare() method
+     or pass an Comparator or Exception is thrown. Sort operations performed on insertion.
+6. LinkedHashMap:
+   - preserve insert order by using a doubly linked list
+7. EnumHashMap:
+   - HashMap where the key is from an ENUM
+8. WeakHashMap:
+   - if the only reference to value is the key in the hash itself then the garbage collector will
+   clean it up. Need external strong reference to stop GC form cleaning it up.
+9. SoftHashMap:
+   - similar to WeakHashMap but GC will only clear it up if there is a real need to ie. short on heap memory
+10. Fail fast - defined as throwing a concurrent modification exception while iterating and inserting at the same time
+11. Collections.synchronizedMap(anyMapObject) will return a synchronized map where all API's are synchronized
+   -  means that all reads/writes block while accessed by a particular thread until thread has finished
+
+Ordering Collections
+--------------------
+1. Use Comparator and Comparable interfaces
+2. Comparable has a single method to implement: compareTo, returns 0, 1 or -1
+

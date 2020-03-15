@@ -1,0 +1,14 @@
+Generics
+--------
+1. Generic uses the <> notation to indicate the type of a collection say
+2. MyClass<AnyType> myObject = new MyClass<>(); - just use <> from Java 7 onwards.
+   Infers type from reference definition. In JAva 9 also applies to inner classes
+
+AutoBoxing
+----------
+1. Java has objects (or reference types) and primitives
+2. Each primitive has an object wrapper class ie. int and Integer
+3. Since Java 1.5 autoboxing/unboxing was introduced
+    Integer myInt = 10; works as 10 is autoboxed for you.
+
+
