@@ -17,6 +17,7 @@ Collections
     - implementations: HashSet, LinkedHashSet
 7. SortedSet implementations: TreeSet
 8. Queue implementation: DeQue - double ended queue
+9. List.of(), Set.of(). Map.of() produce immutable objects.
 
 Maps (Key / Value)
 ------------------
@@ -26,7 +27,7 @@ Maps (Key / Value)
     - duplicate keys not allowed, original value is overwritten if you re-use a key
     - gets values quickly but not good for iterating
     - implementations: HashMap, HashTable (deprecated), LinkedHashMap
-      EnumHashMap, IdentityHashMap, WeakHasMap, SoftHashMap, TreeMap
+      EnumMap, IdentityHashMap, WeakHasMap, SoftHashMap, TreeMap
 3. HashTable:
    - threadsafe
    - deprecated
@@ -55,7 +56,7 @@ Maps (Key / Value)
      or pass an Comparator or Exception is thrown. Sort operations performed on insertion.
 6. LinkedHashMap:
    - preserve insert order by using a doubly linked list
-7. EnumHashMap:
+7. EnumMap:
    - HashMap where the key is from an ENUM
 8. WeakHashMap:
    - if the only reference to value is the key in the hash itself then the garbage collector will
@@ -65,9 +66,9 @@ Maps (Key / Value)
 10. Fail fast - defined as throwing a concurrent modification exception while iterating and inserting at the same time
 11. Collections.synchronizedMap(anyMapObject) will return a synchronized map where all API's are synchronized
    -  means that all reads/writes block while accessed by a particular thread until thread has finished
+12. Keys are unique ie. a set. If you add() using an existing key the value is overwritten
 
 Ordering Collections
 --------------------
 1. Use Comparator and Comparable interfaces
 2. Comparable has a single method to implement: compareTo, returns 0, 1 or -1
-

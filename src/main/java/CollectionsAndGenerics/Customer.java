@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Customer {
+public class Customer implements Comparable<Customer>{
     private Long Id;
     private String firstName;
     private String lastName;
@@ -90,6 +90,24 @@ public class Customer {
 
     public static CustomerBuilder builder() {
         return new CustomerBuilder();
+    }
+
+    /*
+    If the Integer is equal to the argument then 0 is returned.
+    If the Integer is less than the argument then -1 is returned.
+    If the Integer is greater than the argument then 1 is returned.
+     */
+    @Override
+    public int compareTo(Customer o) {
+        if (this.getId().equals(o.getId())) {
+            return 0;
+        }
+        else if (this.getId() < o.getId()) {
+            return -1;
+        }
+        else {
+            return 1;
+        }
     }
 
     static class CustomerBuilder {
