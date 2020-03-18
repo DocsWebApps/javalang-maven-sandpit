@@ -12,10 +12,12 @@ Collections
     - implementations: ArrayList, LinkedList
 6. Set:
     - elements can not be searched by index
+    - basic sets are not ordered
     - no duplicates
     - can iterate
     - implementations: HashSet, LinkedHashSet
-7. SortedSet implementations: TreeSet
+7. SortedSet implementations: TreeSet - have to implement Comparable interface or use Comparator
+   in object being stored
 8. Queue implementation: DeQue - double ended queue
 9. List.of(), Set.of(). Map.of() produce immutable objects.
 
@@ -25,7 +27,7 @@ Maps (Key / Value)
 2. Map Interface:
     - elements are key value pairs
     - duplicate keys not allowed, original value is overwritten if you re-use a key
-    - gets values quickly but not good for iterating
+    - gets values quickly but not good for iterating, have to iterate indirectly by creating a keySet
     - implementations: HashMap, HashTable (deprecated), LinkedHashMap
       EnumMap, IdentityHashMap, WeakHasMap, SoftHashMap, TreeMap
 3. HashTable:
@@ -42,7 +44,7 @@ Maps (Key / Value)
    - HashMap put() works by finding the hashcode of the key. It then finds the index depending on the size of the
      index array by dividing the hashcode by the max range of the array (array size - 1).
      It then places that node at that index (in the bucket).
-     If a node already exists at that index (or already in the bucket), the NextNodePointer of the last node
+     If a node already exists at that index (or is already in the bucket), the NextNodePointer of the last node
      in the bucket is updated to point to the new added node, which then becomes the last node in the bucket.
    - HashMap.get() works by calculating the hashcode, the index is then calculated, and each node at that
      index has both its hashcode and the equals method on the key checked to see if they both match.
@@ -72,3 +74,38 @@ Ordering Collections
 --------------------
 1. Use Comparator and Comparable interfaces
 2. Comparable has a single method to implement: compareTo, returns 0, 1 or -1
+3. Comparisons are done using the collating sequence: 0-9 before A-Z before a-z etc.
+   The alphabet that Java uses in comparing characters is called a collating sequence.
+   All characters are placed into this sequence, so any two characters can be compared.
+   Here is the part of the sequence that includes the most common characters:
+
+    sp ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ?
+    @  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _
+    `  a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~
+
+    Characters are listed in increasing value, so
+
+    A < K
+    0 < Z
+    Z < a
+    % < +
+    @ < {
+    z < ~
+
+
+    Example: value.compareTo(argument)
+
+    If the value is equal to the argument then 0 is returned.
+    If the value is less than the argument then -1 is returned.
+    If the value is greater than the argument then 1 is returned.
+
+        The first character listed 'sp' stands for the single space character. For example,
+
+        " hello".compareTo("hello")
+
+        returns a negative value since sp < h in the order
+
+    Most of the time you don't need these details. But sometimes you do, so it is nice to know that they exist.
+    The fact that space comes before nearly all other characters is sometimes useful to explain unexpected
+    program behavior.
+

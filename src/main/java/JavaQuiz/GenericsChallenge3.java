@@ -19,12 +19,16 @@ public class GenericsChallenge3 {
     }
 
     public static <T> List<T> get(List<T> list, T t) {
+        System.out.println("Used by firstResult...");
         list.add(t);
         return list;
     }
 
     // When different types are received T defaults to String
+    // Using "R extends T" means R must be T or a subtype of T
+    // If its not, then T gets implicitly converted into Object to maintain this constraint
     public static <T, R extends T> List<T> get(T type1, R type2) {
+        System.out.println("Used by secondResult...");
         List<T> list = new ArrayList<>();
         list.add(type1);
         list.add(type2); // Line 27

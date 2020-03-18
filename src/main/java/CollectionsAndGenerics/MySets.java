@@ -37,7 +37,7 @@ public class MySets {
         myLinkedHasSet.add(customer3); // Not added as its a duplicate
         myLinkedHasSet.stream().map(Customer::getFirstName).forEach(System.out::println);
 
-        // TreeSet
+        // TreeSet - had to implement Comparable interface in Customer and implement compareTo() method
         System.out.println("\nTreeSet...");
         myTreeSet.add(customer3);
         myTreeSet.add(customer4);
@@ -50,6 +50,9 @@ public class MySets {
         for(Customer customer:myTreeSet) {
             System.out.println(customer.getFirstName()+" lives in " + customer.getAddress());
         }
+
+        // Create easy immutable set of upto 10 (max) members - no nulls
+        Set<String> mySet = Set.of("A","B","C");
 
         // No duplicates - IllegalArgumentException
         Set<Customer> noDuplicates = Set.of(new Customer(1L, "Dave", "Collier", "Hinckley","1234"),

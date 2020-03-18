@@ -32,5 +32,8 @@ public class MyLists {
         myLinkedList.add(customer3);
         myLinkedList.add(customer4);
         myLinkedList.stream().map(Customer::getFirstName).forEach(System.out::println);
+
+        // Create easy immutable List of upto 10 (max) elements - no nulls
+        List<Integer> testList = List.of(1,2,3,4,5);
     }
 }

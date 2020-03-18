@@ -102,5 +102,8 @@ public class MyMaps {
         System.gc();
         Thread.sleep(5000);
         System.out.println(myWeakHashMap.size());
+
+        // create easy immutable Map of upto 10 (max) key, value pairs - no nulls
+        Map<Integer, String> myMap = Map.of(1,"Dave",2,"Sarah");
     }
 }
