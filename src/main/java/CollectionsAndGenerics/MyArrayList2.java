@@ -1,4 +1,4 @@
-package Arrarys;
+package CollectionsAndGenerics;
 
 import OOReview.Person;
 

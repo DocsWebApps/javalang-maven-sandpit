@@ -1,4 +1,4 @@
-package Arrarys;
+package CollectionsAndGenerics;
 
 // Demonstrates the use of lists
 import java.util.ArrayList;
