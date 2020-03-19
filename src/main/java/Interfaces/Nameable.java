@@ -5,7 +5,11 @@ public interface Nameable {
 
     String name();
 
+    static String aStaticMethod() {
+        return "An interface can have static methods";
+    }
+
     default String aDefaultMethod() {
-        return "I'm a default method in the Interface Nameable";
+        return "I'm a default instance method in the Interface Nameable";
     }
 }

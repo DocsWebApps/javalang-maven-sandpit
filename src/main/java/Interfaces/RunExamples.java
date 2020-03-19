@@ -30,8 +30,9 @@ public class RunExamples {
 
         for(Nameable name : listNames) {
             System.out.println("My name property is: " + name.name());
-            System.out.println("Default method: " + name.aDefaultMethod());
+            System.out.println("Default instance method: " + name.aDefaultMethod());
             System.out.println("Interface Constant: " + name.INTERFACE_NAME);
+            System.out.println("Static method: " + Nameable.aStaticMethod());
         }
     }
 }

@@ -6,7 +6,22 @@
 5. Interfaces can not be instantiated, they only define behaviour
 6. Good for using polymorphism with types and using in collections ie. can be used as a generic reference type
 7. Interfaces can also contain CONSTANTS
-8. Use inheritance if you want to share state and behaviour in the sub-class ie. Class B is a kind of Class A, just more specialised
+8. Use inheritance if you want to share state and behaviour in the sub-class ie. Class B is a kind of Class A,
+   just more specialised
 9. Use interfaces if you want to share behaviour across classes ie. Class A and Class B both print their name
 10. Convention to use 'able' at the end of an Interface name ie. Name'able'
-11. From Java 8 interfaces support default methods that can be overridden in class implementations
+11. From Java 8 interfaces support default methods that can be overridden in class implementations and provide
+    a single location to write and edit code. They're overridden with per-class precision.
+12. If classes implement interfaces, you can use those interface types as references to cast objects from
+    said classes and call the interface defined methods. ie.
+
+    interface A;
+    class B implements A;
+
+    bObjectRef= new Class B();
+
+    You can now pass bObjectRef to the following method
+
+    executeMethod(A localObjectRef);
+
+    since bObjectRef has implementations for all of A's method definitions.
