@@ -25,3 +25,14 @@
     executeMethod(A localObjectRef);
 
     since bObjectRef has implementations for all of A's method definitions.
+
+13. Default method rules.
+Rule 1. In the case, class A extends B and implements C. If C has a default method with the same method signature
+as a method in the superclass B, then the method in class B is executed.
+
+Rule 2. In the case where class C implements B, and B extends A. If A and B have default methods with the same signature then
+the method in Interface B wins.
+
+Rule 3. In the case class A implements B,C. If both B and C have a default method with the same method signature then
+class A must provide a concrete implementation that overrides both. You can however provide an implementation
+that calls the default method in either B or C like B.super.defaultMethodName()
