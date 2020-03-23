@@ -1,6 +1,7 @@
 ######################
 # Project Specific
 ######################
+SerTest.ser
 davesfile*.txt
 environment.cmd
 /build/www/**
