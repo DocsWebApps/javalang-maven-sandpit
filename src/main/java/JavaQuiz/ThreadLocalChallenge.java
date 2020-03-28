@@ -4,22 +4,26 @@ public class ThreadLocalChallenge {
 
     public static void main(String... doYourBest) throws InterruptedException {
         MarvelThreadLocal wolverine = new MarvelThreadLocal("Wolverine", true);
-        startJoinThread(wolverine);
-        System.out.println(wolverine.xmanName.get());
+        startJoinThread(wolverine); // returns null: xmanName is set to Wolverine in main thread only
+        System.out.println(wolverine.xmanName.get()); // returns Wolverine: since xmanName is set in main thread
 
-        startJoinThread(new MarvelThreadLocal("Xavier", true));
-        startJoinThread(new MarvelThreadLocal("Cyclops", false));
+        startJoinThread(new MarvelThreadLocal("Xavier", true)); // returns null: xmanName is set to Wolverine in main thread
+        startJoinThread(new MarvelThreadLocal("Cyclops", false)); // returns Magneto: not using any instance variable
     }
 
     private static void startJoinThread(MarvelThreadLocal marvelThreadLocal) throws InterruptedException {
         marvelThreadLocal.start();
-        marvelThreadLocal.join();
+        marvelThreadLocal.join(); // Means execute synchronously (main thread blocks) then continue with the main thread
     }
 
     static class MarvelThreadLocal extends Thread {
         ThreadLocal<String> xmanName = new ThreadLocal<>();
         boolean canBeatMagneto;
 
+        // The constructor is run in the main thread,
+        // and so xmanName is set in the main thread, not the subsequent thread!
+        // The run() method runs in the subsequent thread, not the main thread
+        // and so xmanName.get() returns a null since it was set in the main thread
         MarvelThreadLocal(String name, boolean canBeatMagneto) {
             xmanName.set(name);
             this.canBeatMagneto = canBeatMagneto;
