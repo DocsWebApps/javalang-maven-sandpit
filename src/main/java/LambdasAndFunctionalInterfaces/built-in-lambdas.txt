@@ -5,6 +5,7 @@
 5. Consumer<T> - an expression that performs operations on an object T as an argument and has no return type
 6. Supplier<T> - provides an instance of a type T (such as a factory pattern)
 7. Function<T,U> - transforms type T into type U
-8. BiFunction<T,U,V> - takes type T and V and returns type V
+8. BiFunction<T,U,V> - takes type T and U and returns type V
 9. BiConsumer<T,U> - takes two types T and U nd then performs operations with no return type
+10. UnaryOperator<T> - represents an operation on a single operand that produces a result of the same type as its operand
 
