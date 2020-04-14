@@ -13,7 +13,7 @@ Collections
 6. Set:
     - elements can not be searched by index
     - basic sets are not ordered
-    - no duplicates
+    - no duplicates - checks hashcode() first, if an element already exists with the same hashcode it then checks equals()
     - can iterate
     - implementations: HashSet, LinkedHashSet
 7. SortedSet implementations: TreeSet - have to implement Comparable interface or use Comparator
