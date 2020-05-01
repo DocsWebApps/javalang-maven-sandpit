@@ -44,8 +44,11 @@ Maps (Key / Value)
    - HashMap put() works by finding the hashcode of the key. It then finds the index depending on the size of the
      index array by dividing the hashcode by the max range of the array (array size - 1).
      It then places that node at that index (in the bucket).
-     If a node already exists at that index (or is already in the bucket), the NextNodePointer of the last node
+     If a node already exists at that index (or is already in the bucket), it then checks the new node against the
+     equals method of all the existing nodes at that index. If an equals method of any existing node returns true, that existing node
+     is replaced by the new node. If all return false, then the new node is added. The NextNodePointer of the last node
      in the bucket is updated to point to the new added node, which then becomes the last node in the bucket.
+     See MapEqualsChallenge.java for an example.
    - HashMap.get() works by calculating the hashcode, the index is then calculated, and each node at that
      index has both its hashcode and the equals method on the key checked to see if they both match.
      If successful, the value is returned.

@@ -30,7 +30,8 @@ You will learn how to use Map with equals and hashcode.
 
 Background
 When we use Map, overriding equals and hashcode because then it's possible to put unique keys into the Map.
-In this case, equals and hashcode are being defined with the length of the String. So, objects are going to be the same if the String length is the same.
+In this case, equals and hashcode are being defined with the length of the String.
+So, objects are going to be the same if the String length is the same.
 Arya has 4 characters - it will be inserted
 Ned has 3 characters - it will be inserted
 Sansa has 5 characters - it will be inserted
