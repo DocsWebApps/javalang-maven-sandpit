@@ -17,3 +17,28 @@ public class TokenizerChallenge {
         sc.close();
     }
 }
+
+/*
+
+Summary
+Use the Scanner class to parse primitive types and strings using regular expressions.
+
+Background
+Use the Scanner class to parse primitive types and strings using regular expressions.
+
+We created the object Scanner passing the String to be tokenized, separated by a pattern.
+At first, you’ve got to know what the symbols on the tokens mean.
+
+This symbol is called Regex. Many languages use the same concept.
+
+In simple words, this symbol “^\\w” means “not a word” and the “*” means that – Occurs zero or more times,
+is short for {0,}, so it will tokenize by the comma “,“.
+
+The result is:
+
+ThisIsIt
+theFinalString
+NoBugsProject
+
+
+ */
