@@ -41,12 +41,13 @@ In that case, the for looping will be executed forever.
     thread.setDaemon(true);
     thread.run();
 
-There is a trick here. Although the instance of this Thread is a daemon, there is no Thread being started,
-there is no second process being executed. we are only invoking the run that is inside the main Thread.
-The looping from the run method will be executed forever.
+There is a trick here. Although the instance of this Thread is a daemon, there is no new thread being started,
+there is no second process being executed.
+The run() method starts the execution in the current, non daemon main thread.
+We are only invoking the run that is inside the non daemon main Thread,
+abd so the looping from the run method will be executed forever.
 
 4. Will not run forever
-
 thread.setDaemon(true);
 thread.start();
 thread.start();
@@ -68,7 +69,7 @@ Threads are basically parallelized processes. We can create simultaneous java pr
 
 Also, there are two types of Threads, non-daemon, and daemon.
 
-Non-daemon Threads: executes the instructions until the end.
+Non-daemon Threads: executes the instructions until the end. The main method is non-daemon by default.
 Daemon Thread: may or may not be fully executed. The JVM just execute this Thread but it doesn't matter if this method will be finished or not.
 
 What matters is that all non-daemon Threads be finished and daemon maybe.
