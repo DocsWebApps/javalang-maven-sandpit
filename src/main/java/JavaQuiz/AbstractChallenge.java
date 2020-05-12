@@ -10,22 +10,27 @@ public class AbstractChallenge {
             }
         };
 
+        // Method signatures are determined by their name and parameters only, not return type
+        // So the override below overrides the LukeSkywalker getNumber(int number) method,
+        // not the MasterYoda getNumber(Integer number)
+        // In essence, MasterYoda has 2 getNumber() methods with the 2 different parameters
         MasterYoda masterYoda = new AbstractChallenge().new MasterYoda() {
             public int getNumber(int number) {
                 return number;
             }
         };
 
-        System.out.println(darthVader.getNumber(FORCE) +
-                masterYoda.getNumber(Integer.valueOf(FORCE)));
-
         System.out.println(darthVader.getNumber(FORCE) + ":" + masterYoda.getNumber(FORCE) + ":" + masterYoda.getNumber(Integer.valueOf(FORCE)));
 
         System.out.println("The stronger Jedi is: " + (darthVader.getNumber(FORCE) >
                 masterYoda.getNumber(FORCE) ? "Darth Vader" : "Master Yoda"));
+
+        System.out.println("The stronger Jedi is: " + (darthVader.getNumber(FORCE) >
+                masterYoda.getNumber(Integer.valueOf(FORCE)) ? "Darth Vader" : "Master Yoda"));
     }
 
     // Overloading - same method name but different signature
+    // Does not override the LukeSkywalker getNumber(int number) method
     abstract class MasterYoda implements LukeSkywalker {
         int getNumber(Integer force) {
             return force + 10;
@@ -33,6 +38,7 @@ public class AbstractChallenge {
     }
 
     // Overriding - same method name and signature
+    // Overrides DarthVader getNumber(in number) method
     interface LukeSkywalker extends DarthVader {
         int getNumber(int force);
     }

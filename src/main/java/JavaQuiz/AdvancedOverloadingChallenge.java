@@ -101,5 +101,4 @@ When there is widening, the nearest type will be invoked on the method.
 
 byte -> short -> int -> long -> float -> double
              char  ->
-
  */
