@@ -49,7 +49,7 @@ Maps (Key / Value)
      is replaced by the new node. If all return false, then the new node is added. The NextNodePointer of the last node
      in the bucket is updated to point to the new added node, which then becomes the last node in the bucket.
      See MapEqualsChallenge.java for an example.
-   - HashMap.get() works by calculating the hashcode, the index is then calculated, and each node at that
+   - HashMap.get() works by calculating the hashcode of the key, the index is then calculated, and each node at that
      index has both its hashcode and the equals method on the key checked to see if they both match.
      If successful, the value is returned.
    - Java8+, if the number of nodes at an index (or in the bucket) exceeds a threshold (usually 8),

@@ -9,7 +9,7 @@ public class DaemonThreadChallenge implements Runnable {
         Thread thread2 = new Thread(new DaemonThreadChallenge());
         thread1.setDaemon(true);
         thread1.start(); // Daemon - stops when all non daemon threads end like main and thread2 end
-        thread2.start(); // Non Daemon - runs forever! Will force thread 1 to also run forever since its non daemon
+        thread2.start(); // Non Daemon - runs forever! Will force thread 1 to also run forever since this thread is non daemon
         System.out.println("Main method ends!");
     }
 

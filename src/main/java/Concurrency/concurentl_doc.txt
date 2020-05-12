@@ -69,5 +69,12 @@
 
 30. Deadlock: when 2 or more threads are blocked forever, ie. each thread holds the lock the others trying to acquire
 31. Starvation or Livelock: when a thread gets no time to execute as its shut out by other greedy threads
+32. Difference between start() and run():
+The difference is that when program calls start() method, a new thread is created and code inside run() is executed in new thread
+while if you call run() method directly no new thread will be created and code inside run() will execute in the current thread directly.
+Another difference between start() and run() in Java thread is that you can not call start() twice.
+Once started, second start() call will throw IllegalStateException in Java while you can call run() method several times since it's
+just an ordinary method.
+
 
 
