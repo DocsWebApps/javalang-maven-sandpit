@@ -76,5 +76,38 @@ Another difference between start() and run() in Java thread is that you can not 
 Once started, second start() call will throw IllegalStateException in Java while you can call run() method several times since it's
 just an ordinary method.
 
+33. Common Thread method calls:
+The wait() Method
+-----------------
+Simply put, when we call wait() – this forces the current thread to wait until some other thread invokes notify()
+or notifyAll() on the same object.
+For this, the current thread must own the object's monitor. According to Javadocs, this can happen when:
+    we've executed synchronized instance method for the given object
+    we've executed the body of a synchronized block on the given object
+    by executing synchronized static methods for objects of type Class
+
+notify()
+--------
+For all threads waiting on this object's monitor (by using any one of the wait() method),
+the method notify() notifies any one of them to wake up arbitrarily.
+The choice of exactly which thread to wake is non-deterministic and depends upon the implementation.
+
+Since notify() wakes up a single random thread it can be used to implement mutually exclusive locking
+where threads are doing similar tasks, but in most cases, it would be more viable to implement notifyAll().
+
+notifyAll()
+-----------
+This method simply wakes all threads that are waiting on this object's monitor.
+The awakened threads will complete in the usual manner – like any other thread.
+
+join()
+------
+The join() method is used to hold the execution of currently running thread until the specified thread is dead(finished execution).
+ie. In the main method thread, if we execute
+    thread1.start()
+    thread1.join()
+this will start thread1 and then hold the main method thread until thread1 has finished.
+
+
 
 
