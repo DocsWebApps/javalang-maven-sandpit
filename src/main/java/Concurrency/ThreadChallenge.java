@@ -30,37 +30,39 @@ public class ThreadChallenge {
 //        yamaha.join(); // Hold the main thread here until yamaha thead has finished
 //
 //        //3. Yes - using join holds main thread while other threads finish in order
-//        Motorcycle harley = new Motorcycle("Harley Davidson");
-//        harley.start();
-//        harley.join(); // Hold the main thread here until harley thead has finished
-//
-//        Motorcycle fastBike = new Motorcycle("Dodge Tomahawk");
-//        fastBike.setPriority(Thread.MAX_PRIORITY);
-//        fastBike.setDaemon(false);
-//        fastBike.start();
-//        fastBike.join(); // Hold the main thread here until fastBike thead has finished
-//
-//        Motorcycle yamaha = new Motorcycle("Yamaha YZF");
-//        yamaha.setPriority(Thread.MIN_PRIORITY);
-//        yamaha.start();
-//        yamaha.join(); // Hold the main thread here until yamaha thead has finished
-//
-//        //4. No - IllegalThreadStateException thrown as can't setDaemon() after start()
         Motorcycle harley = new Motorcycle("Harley Davidson");
         harley.start();
-        harley.setDaemon(false);
+        harley.join(); // Hold the main thread here until harley thead has finished
+        System.out.println(thread.wolverineAdrenaline);
 
         Motorcycle fastBike = new Motorcycle("Dodge Tomahawk");
         fastBike.setPriority(Thread.MAX_PRIORITY);
         fastBike.setDaemon(false);
         fastBike.start();
-        fastBike.setDaemon(false);
+        fastBike.join(); // Hold the main thread here until fastBike thead has finished
+        System.out.println(thread.wolverineAdrenaline);
 
         Motorcycle yamaha = new Motorcycle("Yamaha YZF");
         yamaha.setPriority(Thread.MIN_PRIORITY);
         yamaha.start();
-        yamaha.setDaemon(false);
-
+        yamaha.join(); // Hold the main thread here until yamaha thead has finished
+//
+//        //4. No - IllegalThreadStateException thrown as can't setDaemon() after start()
+//        Motorcycle harley = new Motorcycle("Harley Davidson");
+//        harley.start();
+//        harley.setDaemon(false);
+//
+//        Motorcycle fastBike = new Motorcycle("Dodge Tomahawk");
+//        fastBike.setPriority(Thread.MAX_PRIORITY);
+//        fastBike.setDaemon(false);
+//        fastBike.start();
+//        fastBike.setDaemon(false);
+//
+//        Motorcycle yamaha = new Motorcycle("Yamaha YZF");
+//        yamaha.setPriority(Thread.MIN_PRIORITY);
+//        yamaha.start();
+//        yamaha.setDaemon(false);
+//
         System.out.println(thread.wolverineAdrenaline);
     }
 
