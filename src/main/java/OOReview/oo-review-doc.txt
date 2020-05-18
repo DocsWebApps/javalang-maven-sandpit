@@ -22,4 +22,5 @@ Static modifier - executes when the class loads
 Static method - can be called from the Class without an instance
 Static variable - gets assigned when the class loads
 Static class - a nested class which is a static member of the outer class. It can be accessed without instantiating the outer class, using other static members.
-Manager class inherits from Employee - Java has single class inheritance
+A static inner class can access private members in the outer class.
+Manager class inherits from Employee - Java has single class inheritance.
