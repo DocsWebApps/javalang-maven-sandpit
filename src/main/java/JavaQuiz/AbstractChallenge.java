@@ -20,6 +20,7 @@ public class AbstractChallenge {
             }
         };
 
+
         System.out.println(darthVader.getNumber(FORCE) + ":" + masterYoda.getNumber(FORCE) + ":" + masterYoda.getNumber(Integer.valueOf(FORCE)));
 
         System.out.println("The stronger Jedi is: " + (darthVader.getNumber(FORCE) >
