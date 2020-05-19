@@ -18,7 +18,7 @@ public class OptionalChallenge1 {
         displayFinalZionValue("1");
         // Although orElse() is not executed, the method getVisionFromOracle() is evaluated
         // although matrixCount gets incremented but finalZionValue is assigned
-        // as "Virus" and not "KeyMakerVirus" for some fucking odd reason !
+        // as "Virus" and not "KeyMakerVirus" (since the method getVisionFromOracle() just evaluated)
         finalZionValue += Optional.ofNullable(agentSmith).orElse(getVisionFromOracle());
         displayFinalZionValue("3");
 
