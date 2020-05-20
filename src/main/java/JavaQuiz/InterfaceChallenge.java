@@ -81,5 +81,5 @@ So the first part of the String will be: SLukeF
 Then the Jedi.useSaber() method will be invoked, and note that this method is being invoked in a static way.
 So the method we overrode won't be invoked, this method will return S.
 
-Finally, the constant Jedi.MASTER will be printed with the final input: SLukeFSYod
+Finally, the constant Jedi.MASTER will be printed with the final input: SLukeFSYoda
  */
