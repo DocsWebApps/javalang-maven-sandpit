@@ -64,7 +64,7 @@ public class LambdaOperations {
 
         Stream.of("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday").filter(d->d.startsWith("S")).forEach(System.out::println);
 
-        Path file = new File("C:\\MyCode\\Java\\javalang-maven-sandpit\\src\\main\\java\\LambdaOperations\\tempest.txt").toPath();
+        Path file = new File("D:\\DevEnvironment\\DocsCode\\javalang-maven-sandpit\\src\\main\\java\\LambdaOperations\\tempest.txt").toPath();
         try {
            Long count = Files.lines(file).flatMap(line->Stream.of(line.split(" "))).count();
            System.out.println("Number of words in tempest file: " + count);
